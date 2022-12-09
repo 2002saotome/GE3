@@ -17,6 +17,7 @@ void Input::Initialize(HINSTANCE hInstance, HWND hwnd)
     //入力データ形式のセット
     result = Keyboard->SetDataFormat(&c_dfDIKeyboard);
     assert(SUCCEEDED(result));
+
     //排他制御レベルセット
     result = Keyboard->SetCooperativeLevel(hwnd, DISCL_FOREGROUND | DISCL_NONEXCLUSIVE | DISCL_NOWINKEY);
     assert(SUCCEEDED(result));
