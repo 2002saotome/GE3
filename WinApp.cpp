@@ -1,6 +1,6 @@
 #include"WinApp.h"
 
-LRESULT WinApp::WindowProc(HWND hwnd, UINT msg, WAPRAM wparam, LPARAM lparam)
+LRESULT WinApp::WindowProc(HWND hwnd, UINT msg, WPARAM wparam, LPARAM lparam)
 {
     //メッセージで分岐
     switch (msg)
@@ -53,4 +53,10 @@ void WinApp::Initialize()
 void WinApp::Update()
 {
 
+}
+
+void WinApp::Finalize()
+{
+    // ウィンドウクラスを登録解除
+    UnregisterClass(w.lpszClassName, w.hInstance);
 }

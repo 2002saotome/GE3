@@ -3,6 +3,7 @@
 #include<wrl.h>
 #define DIRECTINPUT_VERSION  0x0800  //DirectInputのバージョン指定
 #include<dinput.h>
+#include"WinApp.h"
 
 
 class Input
@@ -13,7 +14,7 @@ public:  //メンバー関数
 
 public:
 	//初期化
-	void Initialize(HINSTANCE hInstance,HWND hwnd);
+	void Initialize(WinApp*winApp);
 	//更新
 	void Update();
 
@@ -32,5 +33,8 @@ private:  //メンバー変数
 	BYTE KeyPre[256] = {};
 
 	ComPtr<IDirectInput8> directInput;
+private:
+	//WindowsAPI
+	WinApp* winApp_ = nullptr;
 };
 
