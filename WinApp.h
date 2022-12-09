@@ -24,6 +24,8 @@ public: //定数
 
 	 //getter
 	 HINSTANCE GetHInstance()const { return w.hInstance; }
+	 //メッセージの処理
+	 bool ProcessMessage();
 private:
 	//ウィンドウハンドル
 	HWND hwnd = nullptr;
